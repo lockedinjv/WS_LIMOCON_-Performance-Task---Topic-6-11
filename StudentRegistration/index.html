@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Student Registration Form</h1>
+    <p>Please complete all required fields.</p>
+
+    <form id="registration-form" novalidate>
+      <label for="student-id">Student ID</label>
+      <input id="student-id" name="studentId" type="text" required data-error="student-id-error" data-error-msg="Please enter your student ID.">
+      <small id="student-id-error" class="error-message"></small>
+
+      <label for="full-name">Full Name</label>
+      <input id="full-name" name="fullName" type="text" required data-error="full-name-error" data-error-msg="Please enter your full name.">
+      <small id="full-name-error" class="error-message"></small>
+
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required data-error="email-error" data-error-msg="Please enter your email address.">
+      <small id="email-error" class="error-message"></small>
+
+      <label for="phone">Phone Number (e.g. 09123456789)</label>
+      <input id="phone" name="phone" type="tel" required data-error="phone-error" data-error-msg="Please enter your phone number.">
+      <small id="phone-error" class="error-message"></small>
+
+      <label for="birth-date">Date of Birth</label>
+      <input id="birth-date" name="birthDate" type="date" required data-error="birth-date-error" data-error-msg="Please enter your date of birth.">
+      <small id="birth-date-error" class="error-message"></small>
+
+      <fieldset id="gender-field" data-error="gender-error" data-error-msg="Please select a gender.">
+        <legend>Gender</legend>
+        <label class="inline"><input type="radio" name="gender" value="Female"> Female</label>
+        <label class="inline"><input type="radio" name="gender" value="Male"> Male</label>
+        <label class="inline"><input type="radio" name="gender" value="Prefer not to say"> Prefer not to say</label>
+        <small id="gender-error" class="error-message"></small>
+      </fieldset>
+
+      <label for="program">Program</label>
+      <select id="program" name="program" required data-error="program-error" data-error-msg="Please select a program.">
+        <option value="">Choose a program</option>
+        <option value="Information Technology">Information Technology</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Business Administration">Business Administration</option>
+        <option value="Education">Education</option>
+      </select>
+      <small id="program-error" class="error-message"></small>
+
+      <label for="year-level">Year Level</label>
+      <select id="year-level" name="yearLevel" required data-error="year-level-error" data-error-msg="Please select a year level.">
+        <option value="">Choose a year level</option>
+        <option value="1st Year">1st Year</option>
+        <option value="2nd Year">2nd Year</option>
+        <option value="3rd Year">3rd Year</option>
+        <option value="4th Year">4th Year</option>
+      </select>
+      <small id="year-level-error" class="error-message"></small>
+
+      <label for="password">Password (at least 8 characters)</label>
+      <div class="password-row">
+        <input id="password" name="password" type="password" required data-error="password-error" data-error-msg="Please enter a password.">
+        <button id="toggle-password" type="button" aria-pressed="false">Show</button>
+      </div>
+      <small id="password-error" class="error-message"></small>
+
+      <label for="confirm-password">Confirm Password</label>
+      <input id="confirm-password" name="confirmPassword" type="password" required data-error="confirm-password-error" data-error-msg="Please confirm your password.">
+      <small id="confirm-password-error" class="error-message"></small>
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" required data-error="address-error" data-error-msg="Please enter your address."></textarea>
+      <small id="address-error" class="error-message"></small>
+
+      <label class="agreement" for="agreement">
+        <input id="agreement" name="agreement" type="checkbox" required data-error="agreement-error" data-error-msg="Please agree before submitting.">
+        I confirm that the information is correct.
+      </label>
+      <small id="agreement-error" class="error-message"></small>
+
+      <div class="buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+      <p id="success-message" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
